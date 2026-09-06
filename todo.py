@@ -113,6 +113,7 @@ def get_all_todos():
                 'success': True,
                 'count': len(todos),
                 'data': todos,
+                'message': 'Todos fueron traidos successfully'
             })
     finally:
         conn.close()
@@ -134,7 +135,7 @@ def get_todo_by_id(todo_id):
             return create_response(200, {
                 'success': True,
                 'data': todo,
-                'message': f'Todo with id {todo_id} retrieved successfully, se viene'
+                'message': f'Todo with id {todo_id} retrieved successfully'
             })
     finally:
         conn.close()
