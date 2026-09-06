@@ -1,12 +1,11 @@
-import pymysql
+import pymysql, os
 
 def lambda_handler(event, context):
     
-    # Cambia estos valores por los tuyos
-    DB_HOST = 'todo-demo-db.cxwe8u2cw016.us-east-2.rds.amazonaws.com'  # ← TU ENDPOINT
-    DB_USER = 'admin'
-    DB_PASSWORD = '1525.edu'  # ← TU PASSWORD
-    DB_NAME = 'todos'
+    DB_HOST = os.environ.get('DB_HOST')
+    DB_USER = os.environ.get('DB_USER')
+    DB_PASSWORD = os.environ.get('DB_PASSWORD')
+    DB_NAME = os.environ.get('DB_NAME')
     
     print(f"Connecting to {DB_HOST}...")
     
